@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a3b8adbc-6c3a-4c82-a00a-22a55457113d" name="Scotow Server Deployment" url="http://wissamlefevre.com">
+        <fileTransfer host="wissamlefevre.com" port="22" accessType="SFTP" password="dfcddfc3dfd8dfcbdfccdfccdfcfdfc7dfcbdfcddfc3dfdbdfdfdfcfdf9edf9fdf93" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
