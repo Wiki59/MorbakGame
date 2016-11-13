@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Language" content="fr"/>
     <meta name="author" content="Marc Glisse"/>
-    <script type="text/javascript" src="Script/jquery.js"></script>
+    <script type="text/javascript" src="script/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <title>
         Morbak online
@@ -44,6 +44,6 @@
 </div>
 <div id="score">
 </div>
-<script type="text/javascript" src="Script/script.js"></script>
+<script type="text/javascript" src="script/script.js"></script>
 </body>
 </html>

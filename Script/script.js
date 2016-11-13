@@ -1,6 +1,8 @@
-$("#jouer").one("click", jouerFunction = function () {
+$("#jouer").one("click", function () {
     matrice = initMatrice();
     allInterval = initMatrice(0);
+    numbers = initMatrice(0);
+
     for (i = 0; i < matrice.length; i++) {
         for (j = 0; j < matrice[i].length; j++) {
             allInterval[i][j] = randNumb(matrice[i][j], true);
@@ -8,7 +10,6 @@ $("#jouer").one("click", jouerFunction = function () {
     }
     $(this).html("Spin");
     $(this).one("click", function () {
-        numbers = initMatrice(0);
         for (i = 0; i < matrice.length; i++) {
             for (j = 0; j < matrice[i].length; j++) {
                 numbers[i][j] = randNumb(matrice[i][j], false, allInterval[i][j]);
@@ -57,6 +58,8 @@ solve = function (numbers, matrice) {
     var point = 0;
     var elem = "background";
     var toCss = "rgba(0, 250, 20, 0.5)";
+
+    // Check matrice time
     for (i = 0; i < 3; i++) {
         if (numbers[i][0] == numbers[i][1] && numbers[i][1] == numbers[i][2]) {
             matrice[i][0].css(elem, toCss);
@@ -87,6 +90,8 @@ solve = function (numbers, matrice) {
         point += numbers[1][1];
     }
 
+    // Show score
+    var initialMargin = $("#morbak").css("margin");
     $("#morbak").animate({
         margin: "0 0"
     }, 1000);
@@ -94,12 +99,21 @@ solve = function (numbers, matrice) {
     $("#result").html(result);
     setTimeout(function () {
         $("#result").toggle();
+
+        // Reload event
         button = $("#jouer");
         button.html("Reload");
         button.one("click", function () {
+            $("#result").hide();
+            $("#morbak").animate({
+                margin: initialMargin,
+            }, 1000, function() {
+                $(this).css("margin", "0 auto");
+            });
             for (i = 0; i < matrice.length; i++) {
                 for (j = 0; j < matrice[i].length; j++) {
                     matrice[i][j].html("?");
+                    matrice[i][j].css("background", "transparent");
                 }
             }
             button.html("Lancer les dés");
