@@ -16,18 +16,16 @@
         <h1 id="title">
             L'invasion des morbaks
         </h1>
-
+<!--
         <div id="connexion">
             <input id="pseudo" type="text" placeholder="Insert your name here"/>
-    <!--
             <div id="checkBox">
                 <input type="radio"/>Se souvenir de moi
             </div>
-     -->
-            <input id="submit" type="submit" value="Jouer"/>
+            <input class="typicalButton" id="submit" type="submit" value="Jouer"/>
         </div>
-
-        <div id="game" hidden="hidden">
+-->
+        <div id="game">
             <div id="tablePoint">
                 <table id="morbak">
                     <tr>
@@ -50,7 +48,8 @@
                 </div>
             </div>
             <br/>
-            <button id="jouer">Lancer les dés</button>
+            <button class="typicalButton" id="jouer">Lancer les dés</button>
+            <button class="typicalButton" id="saveIt" hidden="hidden">S'enregistrer</button>
         </div>
     </div>
 </div>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="Scotow Server Deployment">
+  <component name="PublishConfigData" autoUpload="Always" serverName="Morbak Pi Deployment">
     <serverData>
-      <paths name="Scotow Server Deployment">
+      <paths name="Morbak Pi Deployment">
         <serverdata>
           <mappings>
-            <mapping deploy="/var/www/wissam/Morbak" local="$PROJECT_DIR$" web="/var/www/wissam" />
+            <mapping deploy="/var/www/MorbakGame" local="$PROJECT_DIR$" web="" />
           </mappings>
         </serverdata>
       </paths>

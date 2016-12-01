@@ -23,6 +23,15 @@ $("#jouer").one("click", function () {
     })
 });
 
+
+$.post("score.php", {
+    pseudo: "bob",
+    score: "5"
+}, function() {
+    console.log("ok");
+});
+
+
 initMatrice = function (toInit) {
     var ret = Array();
     for (i = 0, x = 1; i < 3; i++, x++) {
@@ -96,18 +105,22 @@ solve = function (numbers, matrice) {
         margin: "0 0"
     }, 1000);
     result = (point > 0) ? ((point > 1) ? "Vous avez gagné " + point + " points" : "Vous avez gagné " + point + " point") : "Vous n'avez rien gagné";
-    $("#result").html(result);
     setTimeout(function () {
-        $("#result").toggle();
+        var buttonJouer = $("#jouer");
+        var bouttonSave = $("#saveIt");
+        var resultPanel = $("#result");
+        buttonJouer.html("Reload");
+        bouttonSave.show();
+        resultPanel.html(result);
+        resultPanel.show();
 
-        // Reload event
-        button = $("#jouer");
-        button.html("Reload");
-        button.one("click", function () {
-            $("#result").hide();
+        // Reload part
+        buttonJouer.one("click", function () {
+            resultPanel.hide();
+            bouttonSave.hide();
             $("#morbak").animate({
                 margin: initialMargin,
-            }, 1000, function() {
+            }, 1000, function () {
                 $(this).css("margin", "0 auto");
             });
             for (i = 0; i < matrice.length; i++) {
@@ -116,9 +129,9 @@ solve = function (numbers, matrice) {
                     matrice[i][j].css("background", "transparent");
                 }
             }
-            button.html("Lancer les dés");
-            button.one("click", function () {
-                $("#result").hide();
+            buttonJouer.html("Lancer les dés");
+            buttonJouer.one("click", function () {
+                resultPanel.hide();
                 for (i = 0; i < matrice.length; i++) {
                     for (j = 0; j < matrice[i].length; j++) {
                         allInterval[i][j] = randNumb(matrice[i][j], true);
@@ -139,6 +152,19 @@ solve = function (numbers, matrice) {
                 })
             });
         });
+
+        // Save part
+        bouttonSave.one("click", function () {
+            $("#game").append("<input class='typicalButton' id='pseudoLogger' type='text' placeholder='Pseudo'/>");
+            $(this).hide();
+            $("#pseudoLogger").on("keypress", function (e) {
+                if (e.which === 13) {
+                    var pseudo = $(this).val();
+
+                }
+            });
+        });
+
     }, 1000);
     return point;
 };

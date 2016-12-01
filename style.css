@@ -79,7 +79,7 @@ html, body {
     box-shadow: 0 0 5px 3px green;
 }
 
-#jouer, #submit {
+.typicalButton {
     text-align: center;
     background: transparent;
     border: 1px solid black;
@@ -87,7 +87,7 @@ html, body {
     font-size: medium;
 }
 
-#jouer:hover, #submit:hover {
+.typicalButton {
     background-color: aliceblue;
     cursor: pointer;
 }

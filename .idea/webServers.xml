@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="a3b8adbc-6c3a-4c82-a00a-22a55457113d" name="Scotow Server Deployment" url="http://wissamlefevre.com">
-        <fileTransfer host="wissamlefevre.com" port="22" accessType="SFTP" password="dfcddfc3dfd8dfcbdfccdfccdfcfdfc7dfcbdfcddfc3dfdbdfdfdfcfdf9edf9fdf93" username="root">
+      <webServer id="a3b8adbc-6c3a-4c82-a00a-22a55457113d" name="Morbak Pi Deployment" url="http://morbak.wissamlefevre.com">
+        <fileTransfer host="wissamlefevre.com" port="22" accessType="SFTP" password="dfcedfd8dfcbdf9bdfcddfc5dfc4df98" username="pi">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
